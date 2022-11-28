@@ -1,0 +1,11 @@
+title       TYPE_STR
+scripts     TYPE_URLLIST
+style       TYPE_URLLIST
+lang        TYPE_LANGENUM
+description TYPE_STR
+keywords    TYPE_STRLIST
+baseurl     TYPE_URL
+basetarget  TYPE_METHODENUM
+author      TYPE_STR
+icon        TYPE_URL
+refresh     TYPE_REFRESHLIST

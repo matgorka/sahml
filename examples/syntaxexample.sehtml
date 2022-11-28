@@ -1,6 +1,0 @@
-(tag :atrybut1="wartosc1" :atrybut2 :atrybut3="wartosc3"
-  zawartosc_tagu
-  (tag2
-    zawartosc_podtagu))
-
-(tag3 aaa)
