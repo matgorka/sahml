@@ -288,25 +288,14 @@ int rt_rp_end_tag(const char *next, ...)
 	return *next != '\0' && strcmp(next, "rt") && strcmp(next, "rp");
 }
 
-int caption_end_tag(const char *next, ...)
+int caption_colgroup_end_tag(const char *next, ...)
 {
-  /* from HTML spec:
-   * A caption element's end tag can be omitted if the caption element
-   * is not immediately followed by ASCII whitespace or a comment.
-   * TO DO!
-   */
-
-  return 1;
-}
-
-int colgroup_end_tag(const char *next, ...)
-{
-  return 1;
+  return 0;
 }
 
 int tbody_end_tag(const char *next, ...)
 {
-  return 1;
+  return *next != '\0' && strcmp(next, "tbody") && strcmp(next, "tfoot");
 }
 
 int thead_end_tag(const char *next, ...)
@@ -343,6 +332,20 @@ int html_head_body_end_tag()
 {
   return 0;
 }
+
+/* the parser needs to know the rule that no content should be either
+ * directly inside or outside the html tag, then the rules for omiting
+ * start and end tags will work, btw it should always be a rule, so no big deal
+ * oh, and no content directly inside head, and only a few tags allowed
+ */
+
+/* html can be omitted if no lang is set */
+int html_head_body_start_tag()
+{
+  return 0;
+}
+
+/* colgroup and tbody */
 
 
 
